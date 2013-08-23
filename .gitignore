@@ -1,0 +1,12 @@
+# Heroku Distribution Directory
+_heroku
+_heroku/*
+
+# System Files
+.DS_Store
+
+# Editor Files
+*.sublime*
+
+# Ignore Config Files
+*.env

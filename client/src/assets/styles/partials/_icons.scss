@@ -1,0 +1,133 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot');
+  src:
+    url('../fonts/icomoon.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.woff') format('woff'),
+    url('../fonts/icomoon.ttf') format('truetype'),
+    url('../fonts/icomoon.svg#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Use the following CSS code if you want to use data attributes for inserting your icons */
+[data-icon]:before {
+  font-family: 'icomoon';
+  content: attr(data-icon);
+  speak: none;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Use the following CSS code if you want to have a class per icon */
+.icon-menu, .icon-heart, .icon-heart-2, .icon-wondering, .icon-wondering-2, .icon-cool, .icon-cool-2, .icon-grin, .icon-grin-2, .icon-confused, .icon-confused-2, .icon-neutral, .icon-neutral-2, .icon-facebook, .icon-facebook-2, .icon-facebook-3, .icon-map, .icon-map-2, .icon-quill, .icon-location, .icon-gift, .icon-star, .icon-calendar, .icon-info, .icon-info-2, .icon-tongue, .icon-tongue-2, .icon-wink, .icon-wink-2, .icon-pacman, .icon-glass {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+.icon-menu:before {
+  content: "\e000";
+}
+.icon-heart:before {
+  content: "\e001";
+}
+.icon-heart-2:before {
+  content: "\e002";
+}
+.icon-wondering:before {
+  content: "\e003";
+}
+.icon-wondering-2:before {
+  content: "\e004";
+}
+.icon-cool:before {
+  content: "\e005";
+}
+.icon-cool-2:before {
+  content: "\e006";
+}
+.icon-grin:before {
+  content: "\e007";
+}
+.icon-grin-2:before {
+  content: "\e008";
+}
+.icon-confused:before {
+  content: "\e009";
+}
+.icon-confused-2:before {
+  content: "\e00a";
+}
+.icon-neutral:before {
+  content: "\e00b";
+}
+.icon-neutral-2:before {
+  content: "\e00c";
+}
+.icon-facebook:before {
+  content: "\e00d";
+}
+.icon-facebook-2:before {
+  content: "\e00e";
+}
+.icon-facebook-3:before {
+  content: "\e00f";
+}
+.icon-map:before {
+  content: "\e010";
+}
+.icon-map-2:before {
+  content: "\e011";
+}
+.icon-quill:before {
+  content: "\e012";
+}
+.icon-location:before {
+  content: "\e013";
+}
+.icon-gift:before {
+  content: "\e014";
+}
+.icon-star:before {
+  content: "\e015";
+}
+.icon-calendar:before {
+  content: "\e016";
+}
+.icon-info:before {
+  content: "\e017";
+}
+.icon-info-2:before {
+  content: "\e018";
+}
+.icon-tongue:before {
+  content: "\e019";
+}
+.icon-tongue-2:before {
+  content: "\e01a";
+}
+.icon-wink:before {
+  content: "\e01b";
+}
+.icon-wink-2:before {
+  content: "\e01c";
+}
+.icon-pacman:before {
+  content: "\e01d";
+}
+.icon-glass:before {
+  content: "\e01e";
+}

@@ -1,0 +1,753 @@
+/* Shared Styles ----------- */
+#bg-video-wrap {
+  overflow: hidden;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  .vjs-text-track-display {
+    display: none !important;
+  }
+
+  video {
+    width: 100%;
+  }
+}
+
+#mosaic {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  // larger than viewport so that there will be no gap between mosiac and window edge
+  width: 110%;
+
+  .bg-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent url('../images/bg/slant-pattern.png') repeat center center;
+    z-index: 1;
+  }
+}
+
+#home {
+  min-width: 320px;
+  background: $tan url('../images/bg/slant-pattern.png') repeat center center;
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $sans-serif;
+  }
+
+  p, span {
+    font-family: $serif;
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.5em;
+  }
+
+  p {
+    padding: 10px;
+    margin: 0;
+  }
+
+  section {
+    padding: 30px 0;
+    position: relative;
+  }
+
+  .circle {
+    $radius: 35px;
+    display: block;
+    position: relative;
+    z-index: 1;
+    background-color: $color2;
+    color: white;
+    height: $radius * 2;
+    width: $radius * 2;
+    line-height: 2.1em;
+    font-weight: 300;
+    margin: 0 auto;
+    text-align: center;
+
+    @include border-radius($radius);
+
+    &.section-icon {
+      font-size: 35px;
+    }
+  }
+
+  .section-title {
+    font-size: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #logo {
+    $h: 270px;
+    z-index: 5;
+    height: $h;
+    position: relative;
+    background: $tan url('../images/bg/slant-pattern.png') repeat center center;
+
+    img {
+      display: block;
+      width: 300px;
+      height: 260px;
+      margin: 0 auto;
+      padding-top: $h/2 - 130px;
+    }
+  }
+
+  #invitation {
+    position: relative;
+    z-index: 5;
+    background: $tan url('../images/bg/slant-pattern.png') repeat center center;
+
+    h1, h2 {
+      text-align: center;
+      margin: 10px auto;
+      max-width: 800px;
+    }
+
+    h1.formal {
+      font-family: "Roboto Slab", serif;
+      font-weight: 400;
+      font-size: 35px;
+      line-height: 1.1em;
+      padding: 20px 10px;
+      color: $tan;
+      color: white;
+      background: $color1 url('../images/bg/slant-pattern.png') repeat center center;
+    }
+  }
+
+  #ceremony {
+    position: relative;
+    z-index: 5;
+    background: $tan url('../images/bg/slant-pattern.png') repeat center center;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .content {
+      overflow: hidden;
+      position: relative;
+
+      .venue-images {
+        margin: 0;
+        overflow: hidden;
+
+        li {
+          list-style: none;
+        }
+      }
+
+      .img-wrapper {
+        overflow: hidden;
+
+        img {
+          display: block;
+          width: 100%;
+        }
+      }
+
+      .venue-map {
+        padding-top: 10px;
+        position: relative;
+        clear: both;
+      }
+
+      .map-wrapper {
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin: 0 auto;
+
+        .map-link {
+          display: block;
+        }
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .address {
+        background: $color1 url('../images/bg/slant-pattern.png') repeat center;
+        text-align: center;
+
+        .english, .korean {
+          padding: 5px 10px;
+        }
+
+        .korean {
+          padding-top: 0px;
+        }
+
+        span {
+          display: block;
+          color: white;
+          font-size: 15px;
+        }
+
+        .name {
+          font-family: $sans-serif;
+          color: lighten($color1, 20%);
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  #accommodations {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    background: $tan url('../images/bg/slant-pattern.png') repeat center;
+
+    .content {
+      position: relative;
+
+      .hotels {
+        margin: 5px;
+
+        @include clearfix();
+      }
+
+      .hotel {
+        list-style: none;
+        position: relative;
+        margin: 0 auto;
+        width: 400px;
+        max-width: 100%;
+
+        & > a {
+          position: relative;
+          display: block;
+          margin: 5px;
+        }
+
+        .details {
+          $sidePad: 15px;
+          position: absolute;
+          top: 0px;
+          width: 100%;
+          height: 100%;
+
+          .name {
+            display: block;
+            color: white;
+            font-size: 30px;
+            line-height: 0.9em;
+            font-weight: 100;
+            padding: 10px $sidePad;
+            margin-right: 150px;
+            text-align: left;
+
+            @include text-shadow(2px 2px 15px $color1)
+          }
+
+          .price {
+            display: block;
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            padding: 5px $sidePad;
+            font-weight: bold;
+            color: $color2;
+            background: rgba(0,0,0,0.5);
+          }
+        }
+      }
+    }
+  }
+
+  #reception {
+    background: $tan url('../images/bg/slant-pattern.png') repeat center center;
+    position: relative;
+    z-index: 5;
+
+    h2 {
+      text-align: center;
+      margin: 20px auto;
+
+      label {
+        font-size: 20px;
+      }
+    }
+
+    .address {
+      text-align: center;
+      display: block;
+      margin-top: -10px;
+      font-weight: bold;
+    }
+  }
+
+  #give {
+
+    ul {
+      margin: 0;
+      margin-top: 15px;
+      text-align: center;
+
+      @include clearfix();
+    }
+
+    li {
+      list-style: none;
+    }
+
+    .donate-btn {
+      $radius: 32px;
+      $borderWidth: 3px;
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      border: $borderWidth solid lighten($darkGray, 20%);
+      background-color: $darkGray;
+      color: white;
+      height: $radius * 2;
+      width: $radius * 2;
+      font-weight: 300;
+      margin: 0 15px;
+      text-align: center;
+      cursor: pointer;
+
+      @include transition(background-color 0.5s ease, border-color);
+      @include border-radius($radius + $borderWidth);
+
+      &:hover, &.active {
+        // background-color: darken($color1, 20%);
+        background-color: darken($sky, 10%);
+        // border-color: lighten($color1, 10%);
+        border-color: lighten($sky, 10%);
+      }
+
+      span {
+        display: block;
+        line-height: $radius * 2;
+      }
+    }
+
+    .form-wrapper {
+      $h: 445px;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin-top: 30px;
+      background: lighten($darkGray, 20%) url('../images/bg/slant-pattern.png') repeat center;
+      border-top: 1px solid $darkGray;
+      border-bottom: 1px solid $darkGray;
+      @include box-shadow(0 5px 7px $darkGray inset, 0 -3px 5px #444 inset);
+      
+      .container {
+        padding: 40px 10px 45px 10px;
+      }
+
+      &.grow-animation.ng-hide-add,
+      &.grow-animation.ng-hide-remove {
+        @include transition(all 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940));
+        display:block !important;
+      }
+
+      /* When hiding an element */
+      &.grow-animation.ng-hide-add.ng-hide-add-active,
+      &.grow-animation.ng-hide-remove {
+        height: 0;
+      }
+
+      /* When showing an element */
+      &.grow-animation.ng-hide-add,
+      &.grow-animation.ng-hide-remove.ng-hide-remove-active {
+        height: $h;
+      }
+    }
+
+    .response-wrapper {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+      .alert {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0;
+
+        @include border-radius(0);
+        @include transition (all 0.5s linear);
+
+        em {
+          display: block;
+          font-style: normal;
+          padding: 10px;
+        }
+      }
+
+      .alert.ng-enter,
+      .alert.ng-leave-active {
+        @include opacity(0);
+      } 
+
+      .alert.ng-leave,
+      .alert.ng-enter-active {
+        @include opacity(100);
+      }
+    }
+
+    form {
+      $formWidth: 360px;
+      width: 360px;
+      margin: 0 auto;
+
+      .form-row {
+        position: relative;
+        margin-top: 15px;
+        @include clearfix();
+      }
+
+      label {
+        text-transform: uppercase;
+        color: white;
+      }
+
+      input {
+        $padLeftRight: 10px;
+        height: 26px;
+        line-height: 26px;
+        width: $formWidth - ($padLeftRight * 2) - 2px;
+        max-width: 100%;
+        padding: 6px $padLeftRight 4px $padLeftRight;
+        border: 1px solid lighten($darkGray, 20%);
+
+        @include border-radius(0);
+        @include box-shadow(0 0 5px lighten($darkGray, 50%) inset);
+
+        &.error {
+          color: $brick;
+          border-color: $brick;
+          @include box-shadow(0 0 3px $red inset);
+        }
+      }
+
+      button {
+        line-height: 35px;
+        padding: 0 10px;
+        border: none;
+
+        @include transition(all 0.3s linear);
+      }
+
+      .expiry, .cvc {
+        float: left;
+      }
+
+      .expiry {
+        margin-right: 20px;
+      }
+
+      #cc-expiry {
+        width: 120px; 
+      }
+
+      #cc-cvc {
+        width: 80px; 
+      }
+
+      .cancel {
+        color: lighten($navy, 50%);
+        background: lighten($navy, 10%);
+        border-bottom: 1px solid darken($navy, 10%);
+
+        &:hover {
+          color: white;
+          background: $navy;
+        }
+      }
+
+      .submit {
+        color: lighten($sky, 30%);
+        background: darken($sky, 10%);
+        border-bottom: 1px solid darken($sky, 30%);
+        margin-right: 10px;
+
+        &:hover {
+          color: white;
+          background: darken($sky, 20%);
+        }
+
+        &:disabled, &:disabled:hover {
+          color: lighten($sky, 30%);
+          background: darken($sky, 10%);
+          @include opacity(50);
+        }
+      }
+    }
+  }
+
+  #proposal {
+    background: $tan url('../images/bg/slant-pattern.png') repeat center center;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+
+    .content {
+      position: relative;
+
+      p {
+        text-align: center;
+        padding: 10px;
+      }
+    }
+  }
+
+  #sns {
+    background: $tan url('../images/bg/slant-pattern.png') repeat center;
+    position: relative;
+    z-index: 5;
+    width: 100%;
+
+    .content {
+
+      ul {
+        margin: 0;
+      }
+
+      li {
+        list-style: none;
+        
+        .circle {
+          background-color: $facebook;
+        }
+
+        a {
+          font-family: $sans-serif;
+          padding: 10px;
+          font-size: 32px;
+          font-weight: bold;
+          line-height: 1.5em;
+          display: block;
+          text-align: center;
+          color: $text;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
+
+/* Any screen larger than 480px ----------- */
+@media only screen
+and (min-width: $break1) {
+#home {
+  #logo, #ceremony, #invitation {
+    background: none;
+  }
+  #invitation {
+    padding-top: 0;
+  }
+}}
+
+// Any screen smaller than 767px
+@media only screen
+and (max-width: $break2) {
+#home {
+  #ceremony {
+    .img-wrapper.small {
+      display: none;
+    }
+  }
+}}
+
+/* Any screen larger than 767px ----------- */
+@media only screen
+and (min-width: $break2) {
+#home {
+  #ceremony {
+    .content {
+      .venue-images {
+        margin: 0 -10px;
+      }
+      .img-wrapper {
+        float: left;
+
+        &.large, &.small {
+          margin: 10px;
+        }
+      }
+    }
+  }
+
+  #accommodations {
+    .content {
+      .hotels {
+        margin: 0 -10px;
+      }
+
+      .hotel {
+        float: left;
+        width: 50%;
+
+        & > a {
+          margin: 10px;
+        }
+      }
+    }
+  }
+}}
+
+/* Smaller Desktop Screens ----------- */
+/* Should be the same as iPad styles ----------- */
+@media only screen
+and (min-width: $break2)
+and (max-width: $break3) {
+#home {
+  #ceremony {
+    .content {
+      .img-wrapper {
+        float: left;
+
+        &.large {
+          width: 440px;
+          height: 360px;
+        }
+
+        &.small {
+          width: 264px;
+          height: 360px;
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+}}
+
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : $break3) {
+#home {
+
+  #logo {
+    $h: 360px;
+    height: $h;
+
+    img {
+      width: 360px;
+      height: 310px;
+      padding-top: $h/2 - 155px;
+    }
+  }
+
+  #invitation {
+    h1.formal {
+      font-size: 40px;
+    }
+
+    h2 {
+      font-size: 35px;
+
+      label {
+        font-size: 20px;
+      }
+    }
+  }
+
+  #ceremony {
+    .content {
+
+      .img-wrapper {
+        float: left;
+
+        &.large {
+          width: 480px;
+          height: 370px;
+        }
+
+        &.small {
+          width: 280px;
+          height: 370px;
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+
+      .address {
+        position: absolute;
+        top: 20px;
+        left: 10px;
+
+        span {
+          text-align: left;
+        }
+      }
+    }
+  }
+}}
+
+
+/* Large Screens ----------- */
+@media only screen 
+and (min-width : $break5) {
+#home {
+
+  #ceremony {
+    .content {
+      .img-wrapper {
+        float: left;
+
+        &.large {
+          width: 480px;
+          height: auto;
+        }
+
+        &.small {
+          width: 300px;
+          height: auto;
+        }
+      }
+    }
+  }
+}}
+
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width: $break2) 
+and (max-device-width: $break4) {
+#home {
+  #ceremony {
+    .content {
+      .img-wrapper {
+        float: left;
+
+        &.large {
+          width: 440px;
+          height: 360px;
+        }
+
+        &.small {
+          width: 264px;
+          height: 360px;
+        }
+
+        img {
+          height: 100%;
+        }
+      }
+    }
+  }
+}}

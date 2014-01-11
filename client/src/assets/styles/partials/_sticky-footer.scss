@@ -1,0 +1,26 @@
+//
+// Sticky Footer
+//
+
+html, body {
+	height: 100%;
+}
+
+#realm {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto $footerHeight * -1;	
+}
+
+#site-footer, #push {
+	height: $footerHeight;
+}
+
+#site-footer {
+	// Tablets and Desktops
+	@media ( min-width: 768px ) {
+		// if your content is being hidden increase the $footerHeight
+		overflow: hidden !important;	
+	}
+}

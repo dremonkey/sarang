@@ -1,0 +1,58 @@
+<div>
+  <div class="container">
+    <ul class="amounts">
+      <li ng-repeat="amount in amounts" class="donate-btn" ng-class="{active: isActive(amount)}" ng-click="displayForm(amount)" ui-event="{touch: 'displayForm()'}"><span>{{amount}}</span></li>
+    </ul>
+  </div>
+  <div class="form-wrapper grow-animation" ng-show="showForm">
+    <div class="container">
+      <div class="response-wrapper animate" ng-switch="stripe.status">
+        <span ng-switch-when="validation-error" class="alert alert-error">
+          <em>Please make sure you have filled everything out correctly.</em>
+        </span>
+        <span ng-switch-when="processing" class="alert alert-info">
+          <em>Please wait while we process your gift.</em>
+        </span>
+        <span ng-switch-when="processing-error" class="alert alert-error">
+          <em>Oops... {{stripe.error.msg}}</em>
+        </span>
+        <span ng-switch-when="server-error" class="alert alert-error">
+          <em>There was a problem with our servers. You have not been charged. Please try again later.</em>
+        </span>
+        <span ng-switch-when="success" class="alert alert-success">
+          <em>Thanks for the gift. Have a good day!</em>
+        </span>
+      </div>
+      <form novalidate name="cardform" class="checkout-form" stripe-submit="process(card)">
+        <div class="form-row amount">
+          <label for="cc-amount">Amount (USD):</label>
+          <input type="text" id="cc-amount" name="amount" ng-model="card.amount" placeholder="$0.00" stripe-validate ng-class="{error: cardform.amount.$invalid && (stripe.attempted || cardform.amount.$dirty)}" required/>
+        </div>
+        <div class="form-row name">
+          <label for="cc-holder">Name:</label>
+          <input type="text" id="cc-holder" name="cardholder" ng-model="card.cardholder" placeholder="First and Last Name" stripe-validate ng-class="{error: cardform.cardholder.$invalid && (stripe.attempted || cardform.cardholder.$dirty)}" required/>
+        </div>
+        <div class="form-row number">
+          <label for="cc-number">Card number:</label>
+          <input type="text" id="cc-number" name="cardnumber" ng-model="card.number" placeholder="•••• •••• •••• ••••" stripe-validate ng-class="{error: cardform.cardnumber.$invalid && (stripe.attempted || cardform.cardnumber.$dirty)}" required/>
+          <div class="placeholder"></div>
+          <div class="type"></div>
+        </div>
+        <div class="form-row">
+          <div class="expiry">
+            <label for="cc-expiry">Expires:</label>
+            <input id="cc-expiry" name="cardexpiry" type="text" ng-model="card.exp" placeholder="MM/YYYY" stripe-validate  ng-class="{error: cardform.cardexpiry.$invalid && (stripe.attempted || cardform.cardexpiry.$dirty)}" required/>
+          </div>
+          <div class="cvc">
+            <label for="cc-cvc">Card code:</label>
+            <input type="text" id="cc-cvc" name="cvc" ng-model="card.cvc" placeholder="CVC" stripe-validate ng-class="{error: cardform.cvc.$invalid && (stripe.attempted || cardform.cvc.$dirty)}" required/>
+          </div>
+        </div>
+        <div class="form-row buttons">
+          <button class="submit" type="submit" ng-disabled="stripe.disableSubmit">Submit</button>
+          <button class="cancel" type="button" ng-click="closeForm()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

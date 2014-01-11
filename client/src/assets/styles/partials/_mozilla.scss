@@ -1,0 +1,7 @@
+// Mozilla Only
+@-moz-document url-prefix() { 
+  html {
+    // force vertical scrollbar
+    overflow-y: scroll;
+  }
+}

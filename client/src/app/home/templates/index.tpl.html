@@ -1,0 +1,19 @@
+<div id="bg-video-wrap" bigvid webm="/videos/proposal.webm" mp4="/videos/proposal.mp4"></div>
+<div id="mosaic" skrollr 
+  mosaic tiles="100" fade-duration="200" bg-from="#81504D" bg-to="#EEE9DD">
+  <div class="bg-overlay"></div>
+</div>
+<div id="skrollr-body">
+  <div home id="home">
+    <section skrollr id="logo" class="animated slideInDown">
+      <img src="/images/logo.png" data-0="opacity:1;" data-200="opacity:0;"/>
+    </section>
+    <section id="invitation" ng-include src="'home/templates/invitation.tpl.html'"></section>
+    <section id="ceremony" ng-include src="'home/templates/ceremony.tpl.html'"></section>
+    <section id="accommodations" ng-include src="'home/templates/accommodations.tpl.html'"></section>
+    <section id="reception" ng-include src="'home/templates/reception.tpl.html'"></section>
+    <!-- <section id="give" ng-include src="'home/templates/give.tpl.html'"></section> -->
+    <section id="proposal" ng-include src="'home/templates/proposal.tpl.html'"></section>
+    <section id="sns" ng-include src="'home/templates/sns.tpl.html'"></section>
+  </div>
+</div>

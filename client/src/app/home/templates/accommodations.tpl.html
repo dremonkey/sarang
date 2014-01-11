@@ -1,0 +1,24 @@
+<div class="container" ng-controller="AccomodationsCtrl">
+  <div class="row">
+    <div class="span12">
+      <div class="content">
+        <span class="section-icon circle"><i class="icon-info"></i></span>
+        <h1 class="section-title">Hotels</h1>
+        <p>The K-Seoul Hotel is the closest to the wedding hall. Clicking on any of the hotel pictures will take you to a website where you can book it. If you have any questions, please contact Andre or Pia, or head over to our <a href="{{fbEventURL}}">Facebook wedding event</a> page.</p>
+        <ul class="hotels">
+          <li class="hotel" ng-repeat="hotel in hotels">
+            <a href="{{hotel.link}}">
+              <div class="img-wrapper">
+                <img ng-src="{{hotel.img}}" alt="{{hotel.name}}" width="400" height="300"/>
+              </div>
+              <div class="details">
+                <span class="name">{{hotel.name}}</span>
+                <span class="price">{{hotel.price}}</span>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

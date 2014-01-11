@@ -1,0 +1,155 @@
+// Import Compass Mixins
+// --------------------------------------------
+@import "compass/css3/border-radius";
+@import "compass/css3/box-shadow";
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import "compass/css3/background-clip";
+@import "compass/css3/background-size";
+@import "compass/css3/box-sizing";
+@import "compass/css3/text-shadow";
+@import "compass/css3/opacity";
+@import "compass/css3/images";
+
+// Import Bootstrap
+// --------------------------------------------
+@import "bootstrap-sass/lib/bootstrap";
+@import "bootstrap-sass/lib/responsive";
+
+// Import Partials
+// --------------------------------------------
+@import "partials/variables";
+@import "partials/animations";
+@import "partials/icons";
+@import "partials/ie";
+@import "partials/mozilla";
+
+body {
+  background: #fafafa;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #444;
+}
+
+a {
+  color: $color2;
+}
+
+form input {
+  &.error {
+    border-color: red;
+    @include box-shadow(0px 0px 10px rgba(255,0,0,0.5));
+  }
+}
+
+#realm {
+  overflow: hidden;
+}
+
+.span12 {
+  float: none;
+  
+  .content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+// Footer
+// --------------------------------------------
+#site-footer {
+  width: 100%;
+  position: relative;
+  background: $darkGray url('../images/bg/slant-pattern.png') repeat center;
+
+  .content {
+    padding: 30px 10px;
+    text-align: center;
+    color: lighten($darkGray, 15%);
+    font-size: 16px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    i {
+      $size: 24px;
+      font-size: $size;
+      display: block;
+      margin: 10px auto 0;
+    }
+  }
+}
+
+// Snap Drawer
+// --------------------------------------------
+.toggle-menu {
+  $radius: 25px;
+  font-size: $radius;
+  position: fixed;
+  z-index: 10;
+  width: $radius*2;
+  height: $radius*2;
+  line-height: 2.1em;
+  background-color: $color2;
+  color: white;
+  text-align: center;
+  display: block;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: darken($color2,20%);
+  }
+
+  // @include border-radius($radius);
+}
+
+.snap-drawer {
+  position: fixed;
+
+  .top-border {
+    height: 50px;
+    background: $color2 url('../images/bg/slant-pattern.png') repeat center; 
+  }
+  .nav {
+    margin-top: 15px;
+
+    li {
+      a {
+        padding: 15px;
+        display: block;
+      }
+    }
+  }
+}
+
+// web font
+// --------------------------------------------
+.wf-loading { 
+  h1, h2, h3, h4, h5, h6, p, span, a {
+      visibility: hidden !important;
+      @include opacity(0);
+    }
+}
+
+.wf-active, .wf-inactive {
+  h1, h2, h3, h4, h5, h6, p, span, a {
+    visibility: visible;
+    @include opacity(100);
+    @include single-transition( all, .5s, ease-in-out );
+  }
+}
+
+// Import App Specific Styling
+// --------------------------------------------
+@import "partials/home";
+
+// Sitewide Media Queries
+// --------------------------------------------
+@media (max-width: 767px) {
+  body {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

@@ -1,0 +1,13 @@
+// Convenience mixins for animations
+
+@mixin animation-duration ($duration: 0.5s) {
+  -webkit-animation-duration: $duration;
+  -moz-animation-duration: $duration;
+  animation-duration: $duration;
+}
+
+@mixin animation-delay ($delay: 0.5s) {
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  animation-delay: $delay;
+}
